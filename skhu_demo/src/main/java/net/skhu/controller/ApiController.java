@@ -1,16 +1,12 @@
 package net.skhu.controller;
 
 import net.skhu.domain.*;
+import net.skhu.dto.ResponsemMessageDto;
 import net.skhu.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.convert.ReadingConverter;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("api")
@@ -29,18 +25,19 @@ public class ApiController {
     CourseRepository courseRepository;
 
 
-     @RequestMapping("departments")
+     @GetMapping("departments")
     public List<Department> findAll_Departments() {
         return departmentRepository.findAll();
     }
 
-    @RequestMapping("department/{departmentId}/students")
+    @GetMapping("department/{departmentId}/students")
     public List<Student> studentListByDepartment(@PathVariable("departmentId")int departmentId){
 
          return departmentRepository.findById(departmentId).get().getStudents();
     }
 
-    @RequestMapping("student/{studentId}/register")
+
+    @GetMapping("student/{studentId}/register")
     public List<Register> courseListByStudent(@PathVariable("studentId")int studentId){
 
          return studentRepository
@@ -49,6 +46,8 @@ public class ApiController {
                  .getRegisters();
 
     }
+
+
 
 
 

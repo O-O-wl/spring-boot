@@ -25,6 +25,11 @@ public class ApiController {
     @Autowired
     CourseRepository courseRepository;
 
+    /*
+    * 서비스 로직 분리 필요
+    * */
+
+
     // 학과목록 조회
      @GetMapping("departments")
     public List<Department> findAll_Departments() {

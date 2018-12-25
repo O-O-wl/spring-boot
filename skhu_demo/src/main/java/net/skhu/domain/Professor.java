@@ -24,6 +24,7 @@ public class Professor {
     @JoinColumn(name = "departmentId")
     Department department;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "professor")
     List<Course> courses;
 }

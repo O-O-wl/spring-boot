@@ -17,6 +17,7 @@ public class LonginController {
     LoginService loginService;
 
 
+    // 로그인 확인용 api
     @GetMapping("id/{userid}/pw/{password}")
     public ResponsemMessageDto loginValidation(@PathVariable("userid")String userid , @PathVariable("password") String password){
 

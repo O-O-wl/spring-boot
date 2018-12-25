@@ -10,7 +10,7 @@ import javax.persistence.AssociationOverride;
 
 @RestController
 @RequestMapping("login")
-public class LonginController {
+public class LoginController {
 
 
     @Autowired

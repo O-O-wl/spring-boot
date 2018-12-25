@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.persistence.JoinColumn;
 
 @RestController
-@RequestMapping("join")
+@RequestMapping("api/join")
 public class JoinUserController {
     @Autowired
     JoinUserService joinUserService;

@@ -9,7 +9,7 @@ import javax.persistence.AssociationOverride;
 
 
 @RestController
-@RequestMapping("login")
+@RequestMapping("api/login")
 public class LoginController {
 
 

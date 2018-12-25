@@ -1,10 +1,7 @@
 package net.skhu.service;
 
 
-import net.skhu.domain.Course;
-import net.skhu.domain.Department;
-import net.skhu.domain.Register;
-import net.skhu.domain.Student;
+import net.skhu.domain.*;
 import net.skhu.repository.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -44,13 +41,13 @@ public class ListSearchService {
 
 
     // 학과별 학생조회
-    public List<Student> studentListByDepartment(@PathVariable("departmentId")int departmentId){
+    public List<Student> studentListByDepartment(int departmentId){
 
         return departmentRepository.findById(departmentId).get().getStudents();
     }
 
     // 교수 아이디로 교수가 맡고있는 과목 조회
-    public Stream<Course> courseListByProfessor(@PathVariable("professorId")int professorId){
+    public Stream<Course> courseListByProfessor(int professorId){
         return professorRepository
                 .findById(professorId)
                 .get()
@@ -58,12 +55,15 @@ public class ListSearchService {
                 .stream()
                 .map(course -> course);
     }
+    public List<Professor> professorListByDepartmentId(int departmentId){
 
+        return professorRepository.findProfessorByDepartmentId(departmentId);
+    }
 
 
     //학생 아이디로 수강수조회
 
-    public Stream<Course> courseListByStudent(@PathVariable("studentId")int studentId){
+    public Stream<Course> courseListByStudent(int studentId){
 
         return studentRepository
                 .findById(studentId)

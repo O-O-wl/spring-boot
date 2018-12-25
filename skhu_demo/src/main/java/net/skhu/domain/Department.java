@@ -25,5 +25,9 @@ public class Department {
     @OneToMany(mappedBy="department", fetch = FetchType.LAZY)
     List<Student> students;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
+    List<Professor> professors;
+
 
 }

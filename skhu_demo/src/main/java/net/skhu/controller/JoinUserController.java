@@ -16,8 +16,12 @@ public class JoinUserController {
     @Autowired
     JoinUserService joinUserService;
 
+    // 중복체크
+
     @GetMapping("id/{userid}")
     public ResponsemMessageDto comfirmId(@PathVariable("userid") String userid){
         return joinUserService.confirmId(userid);
     }
+
+
 }

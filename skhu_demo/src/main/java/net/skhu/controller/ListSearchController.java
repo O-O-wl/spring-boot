@@ -36,6 +36,13 @@ public class ListSearchController {
         return listSearchService.studentListByDepartment(departmentId);
     }
 
+    // 학과별 학생조회
+    @GetMapping("department/{departmentId}/professors")
+    public List<Professor> professorListByDepartment(@PathVariable("departmentId")int departmentId){
+
+        return listSearchService.professorListByDepartmentId(departmentId);
+    }
+
     // 교수 아이디로 교수가 맡고있는 과목 조회
     @GetMapping("professor/{professorId}/courses")
     public Stream<Course> courseListByProfessor(@PathVariable("professorId")int professorId){

@@ -23,7 +23,7 @@ public class LoginController {
     //
     //  ! @PostMapping 으로 변경 예정
     //================================ */
-    @GetMapping("id/{userid}/pw/{password}")
+    @GetMapping("id/{userid}/password/{password}")
     public ResponsemMessageDto loginValidation(@PathVariable("userid")String userid , @PathVariable("password") String password){
 
         return loginService.loginResult(userid,password);

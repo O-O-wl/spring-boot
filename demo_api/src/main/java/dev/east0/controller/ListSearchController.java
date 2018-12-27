@@ -38,7 +38,7 @@ public class ListSearchController {
         return listSearchService.studentListByDepartment(departmentId);
     }
     //=====================
-    //  학과별 학생목록조회
+    //  학과별 교수목록조회
     //=====================
     @GetMapping("department/{departmentId}/professors")
     public List<Professor> professorListByDepartment(@PathVariable("departmentId")int departmentId){
@@ -57,7 +57,7 @@ public class ListSearchController {
 
 
     //=============================
-    //  학생 아이디로 수강과목목록조회
+    //  학생 아이디로 수강과목 목록조회
     //
     //=============================
     @GetMapping("student/{studentId}/courses")

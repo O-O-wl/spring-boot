@@ -4,6 +4,7 @@
 | REST-API 명세 | 조회결과 |
 | :---: | :---: |
 |  **`api/list/departments`** |**`학과 전체목록 조회`**  |
+|  **`api/list/users`** |**` 유저 전체목록 조회`**  |
 | **`api/list/department/`<font color='orange'>`{departmentId}`</font> `/students`** |**`학과아이디로 해당학과 학생 목록 조회`** |
 | **`api/list/department/`<font color='orange'>`{departmentId}`</font> `/professors`** |**`학과아이디로 해당학과 교수 목록 조회`** |
 | **`api/list/student/`<font color='navy'>`{studentId}`</font> `/courses`** |**`학생 아이디로 학생 수강과목 목록 조회`** |

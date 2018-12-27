@@ -34,6 +34,7 @@ public class ListSearchService {
      * 생성자 === @Controller 에서 @Autowired 되어 인스턴트 생성시 ,
      *          바로 Repository 도 자동생성
      * @param studentRepository
+     * @param userRepository
      * @param departmentRepository
      * @param professorRepository
      * @param registerRepository
@@ -41,12 +42,15 @@ public class ListSearchService {
      */
 
     public ListSearchService(StudentRepository studentRepository,
+                             UserRepository userRepository,
                              DepartmentRepository departmentRepository,
                              ProfessorRepository professorRepository,
                              RegisterRepository registerRepository,
                              CourseRepository courseRepository){
+
         this.registerRepository=registerRepository;
         this.studentRepository=studentRepository;
+        this.userRepository=userRepository;
         this.departmentRepository=departmentRepository;
          this.professorRepository=professorRepository;
          this.courseRepository=courseRepository;
@@ -65,6 +69,17 @@ public class ListSearchService {
     public List<Student> studentListByDepartment(int departmentId){
 
         return departmentRepository.findById(departmentId).get().getStudents();
+    }
+
+    //====================
+    // 유저 전체목록 조회
+    //====================
+    public Stream<User> findAllUsers(){
+
+        return userRepository
+                .findAll()
+                .stream()
+                .map(user->user);
     }
 
 

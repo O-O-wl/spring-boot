@@ -20,10 +20,16 @@ public class Student {
     @Column(name = "studentNumber")
     String studentNo;
 
+    // ----------------------------
+    //  Single-Valued Association
+    // -----------------------------
     @ManyToOne
     @JoinColumn(name = "departmentId")
     Department department;
 
+    /* *********************************
+     *    Collection-Valued Association
+     *********************************** */
     @JsonIgnore
     @OneToMany(mappedBy = "student")
     List<Register> registers;

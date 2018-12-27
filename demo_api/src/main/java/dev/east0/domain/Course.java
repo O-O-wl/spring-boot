@@ -1,6 +1,7 @@
 package dev.east0.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.ToString;
 
@@ -18,11 +19,18 @@ public class Course {
 
     String courseName;
 
+
+    // ----------------------------
+    //  Single-Valued Association
+    // -----------------------------
     @ManyToOne
     @JoinColumn(name = "professorId")
     Professor professor;
 
-
+    /* *********************************
+    *    Collection-Valued Association
+    *********************************** */
+    @JsonIgnore
     @OneToMany(mappedBy = "course")
     List<Register> registers;
 

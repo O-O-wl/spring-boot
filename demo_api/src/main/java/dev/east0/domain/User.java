@@ -3,18 +3,18 @@ package dev.east0.domain;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
+@Table(name="user")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
+    @Column(name = "userid")
     String userId;
 
     String password;
@@ -23,7 +23,9 @@ public class User {
 
     String email;
 
-    int departmentId;
+    @ManyToOne
+    @JoinColumn(name = "departmentId")
+    Department department;
 
     boolean enabled;
 

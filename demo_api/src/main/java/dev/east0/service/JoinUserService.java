@@ -2,6 +2,7 @@ package dev.east0.service;
 
 import dev.east0.domain.User;
 import dev.east0.dto.ResponsemMessageDto;
+import dev.east0.repository.DepartmentRepository;
 import dev.east0.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -9,8 +10,9 @@ import org.springframework.stereotype.Service;
 public class JoinUserService {
 
     private UserRepository userRepository;
-
-    public JoinUserService(UserRepository userRepository){
+    private DepartmentRepository departmentRepository;
+    public JoinUserService(UserRepository userRepository,DepartmentRepository departmentRepository){
+        this.departmentRepository = departmentRepository;
         this.userRepository=userRepository;
     }
 
@@ -41,7 +43,7 @@ public class JoinUserService {
         user.setPassword(password);
         user.setName(name);
         user.setEmail(email);
-        user.setDepartmentId(departmentId);
+        user.setDepartment(departmentRepository.findById(departmentId).get());
         user.setEnabled(true);
         user.setUserType("학생");
 

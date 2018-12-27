@@ -55,6 +55,14 @@ public class ListSearchController {
 
     }
 
+    //====================================
+    //    유저 전체 목록 조회
+    // ====================================
+    @GetMapping("users")
+    public Stream<User> findAllUsers(){
+        return listSearchService.findAllUsers();
+
+    }
 
     //=============================
     //  학생 아이디로 수강과목 목록조회

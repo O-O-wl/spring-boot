@@ -8,19 +8,23 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table()
+@Table(name = "register")
 public class Register {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-   // @JsonIgnore
+   // ----------------------------
+   //  Single-Valued Association
+   // -----------------------------
     @JoinColumn(name = "courseId")
-    @JsonIgnore
     @ManyToOne
     Course course;
 
+    // ----------------------------
+    //  Single-Valued Association
+    // -----------------------------
     @ManyToOne
     @JoinColumn(name="studentId")
     Student student;

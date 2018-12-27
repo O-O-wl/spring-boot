@@ -19,13 +19,27 @@ public class Department {
     @Column(name = "departmentName")
     String name;
 
+    /* *********************************
+     *    Collection-Valued Association
+     *********************************** */
     @JsonIgnore
     @OneToMany(mappedBy="department", fetch = FetchType.LAZY)
     List<Student> students;
 
+    /* *********************************
+     *    Collection-Valued Association
+     *********************************** */
     @JsonIgnore
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
     List<Professor> professors;
+
+
+    /* *********************************
+     *    Collection-Valued Association
+     *********************************** */
+    @JsonIgnore
+    @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
+    List<User> users;
 
 
 }

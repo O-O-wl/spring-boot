@@ -20,10 +20,17 @@ public class Professor {
 
     String professorName;
 
+    // ----------------------------
+    //  Single-Valued Association
+    // -----------------------------
     @ManyToOne
     @JoinColumn(name = "departmentId")
     Department department;
 
+
+    /* *********************************
+     *    Collection-Valued Association
+     *********************************** */
     @JsonIgnore
     @OneToMany(mappedBy = "professor")
     List<Course> courses;

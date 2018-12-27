@@ -16,6 +16,7 @@ public class JoinUserService {
         this.userRepository=userRepository;
     }
 
+
     // 아이디 중복 여부 확인 api
     public ResponsemMessageDto confirmId(String userid){
         ResponsemMessageDto confirmId = new ResponsemMessageDto();
@@ -37,9 +38,14 @@ public class JoinUserService {
         user.setDepartmentId(departmentId);
         user.setEnabled(true);
         user.setUserType("학생");
-        userRepository.save(user);
+
         ResponsemMessageDto responsemMessageDto = new ResponsemMessageDto();
-        responsemMessageDto.setResult(true);
+
+        if(confirmId(userid).getResult()){
+            userRepository.save(user);
+            responsemMessageDto.setResult(true);}
+        else{responsemMessageDto.setResult(false);}
+
         return responsemMessageDto;
     }
 

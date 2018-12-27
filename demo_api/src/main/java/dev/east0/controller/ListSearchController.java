@@ -37,6 +37,15 @@ public class ListSearchController {
 
         return listSearchService.studentListByDepartment(departmentId);
     }
+
+    //================================
+    //    학과 아이디를 통한 유저 목록 조회
+    //================================
+    @GetMapping("department/{departmentId}/users")
+    public Stream<User> findUsersByDepartmentId(@PathVariable("departmentId")int departmentId){
+
+        return listSearchService.findUsersByDepartment(departmentId);
+    }
     //=====================
     //  학과별 교수목록조회
     //=====================

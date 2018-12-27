@@ -6,6 +6,7 @@
 |  **`api/list/departments`** |**`학과 전체목록 조회`**  |
 |  **`api/list/users`** |**` 유저 전체목록 조회`**  |
 | **`api/list/department/`<font color='orange'>`{departmentId}`</font> `/students`** |**`학과아이디로 해당학과 학생 목록 조회`** |
+| **`api/list/department/`<font color='orange'>`{departmentId}`</font> `/users`** |**`학과아이디로 해당학과 소속 유저 목록 조회`** |
 | **`api/list/department/`<font color='orange'>`{departmentId}`</font> `/professors`** |**`학과아이디로 해당학과 교수 목록 조회`** |
 | **`api/list/student/`<font color='navy'>`{studentId}`</font> `/courses`** |**`학생 아이디로 학생 수강과목 목록 조회`** |
 | **`api/list/professor/`<font color='crimson'>`{professorId}`</font> `/courses`** |**`교수 아이디로 교수가 강의중인 과목 목록 조회`** |

@@ -82,6 +82,17 @@ public class ListSearchService {
                 .map(user->user);
     }
 
+    //====================
+    // 학과별 유저목록 조회
+    //====================
+    public Stream<User> findUsersByDepartment(int departmentId){
+
+        return userRepository
+                .findUserByDepartment(departmentRepository.findById(departmentId).get())
+                .stream()
+                .map(user->user);
+    }
+
 
 
     //================================

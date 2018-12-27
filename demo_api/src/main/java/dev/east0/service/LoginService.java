@@ -17,19 +17,27 @@ public class LoginService {
         this.userRepository = userRepository;
     }
 
+
+
+
+    /* ===========================
+        로그인 시도후 성공여부 반환
+
+          ! 암호화 진행예정
+     ============================*/
     public ResponsemMessageDto loginResult(String userid , String password)
     {
-        ResponsemMessageDto responsemMessage = new ResponsemMessageDto();
-        System.out.println("----------------------------------");
-        System.out.println(userRepository.findByUserId(userid).get(1).getPassword());
+        ResponsemMessageDto responseMessage = new ResponsemMessageDto();
+
+
         if(userRepository.findByUserId(userid).get(0).getPassword().equals(password)){
-            responsemMessage.setResult(true);
+            responseMessage.setResult(true);
         }
         else {
-            responsemMessage.setResult(false);
+            responseMessage.setResult(false);
         }
 
-        return  responsemMessage;
+        return  responseMessage;
     }
 
 

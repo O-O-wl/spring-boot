@@ -18,7 +18,11 @@ public class LoginController {
     LoginService loginService;
 
 
-    // 로그인 확인용 api
+    /* ==============================
+    //      로그인 성공여부 조회
+    //
+    //  ! @PostMapping 으로 변경 예정
+    //================================ */
     @GetMapping("id/{userid}/pw/{password}")
     public ResponsemMessageDto loginValidation(@PathVariable("userid")String userid , @PathVariable("password") String password){
 

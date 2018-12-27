@@ -17,35 +17,38 @@ import java.util.stream.Stream;
 public class ListSearchController {
 
 
-    /*
-    * 서비스 로직 분리 필요
-    * */
 
     @Autowired
     ListSearchService listSearchService;
 
-    // 학과목록 조회
+    //=========================
+    //  전체 학과 목록 조회
+    //=========================
     @GetMapping("departments")
     public List<Department> findAll_Departments() {
         return listSearchService.findAll_Departments() ;
     }
 
-
-    // 학과별 학생조회
+    //================================
+    //    학과 아이디를 통한 학생 목록 조회
+    //================================
     @GetMapping("department/{departmentId}/students")
     public List<Student> studentListByDepartment(@PathVariable("departmentId")int departmentId){
 
         return listSearchService.studentListByDepartment(departmentId);
     }
-
-    // 학과별 학생조회
+    //=====================
+    //  학과별 학생목록조회
+    //=====================
     @GetMapping("department/{departmentId}/professors")
     public List<Professor> professorListByDepartment(@PathVariable("departmentId")int departmentId){
 
         return listSearchService.professorListByDepartmentId(departmentId);
     }
 
-    // 교수 아이디로 교수가 맡고있는 과목 조회
+    //====================================
+    //    교수 아이디로 교수가 맡고있는 과목 조회
+    // ====================================
     @GetMapping("professor/{professorId}/courses")
     public Stream<Course> courseListByProfessor(@PathVariable("professorId")int professorId){
         return listSearchService.courseListByProfessor(professorId);
@@ -53,8 +56,10 @@ public class ListSearchController {
     }
 
 
-
-    //학생 아이디로 수강수조회
+    //=============================
+    //  학생 아이디로 수강과목목록조회
+    //
+    //=============================
     @GetMapping("student/{studentId}/courses")
     public Stream<Course> courseListByStudent(@PathVariable("studentId")int studentId){
 

@@ -14,8 +14,9 @@ public class JoinUserService {
         this.userRepository=userRepository;
     }
 
-
+    //==========================
     // 아이디 중복 여부 확인 api
+    //===========================
     public ResponsemMessageDto confirmId(String userid){
         ResponsemMessageDto confirmId = new ResponsemMessageDto();
       if(userRepository.findByUserId(userid).size()<1)
@@ -26,7 +27,14 @@ public class JoinUserService {
       return confirmId;
     }
 
-    // 가입요청 서비스
+    /* ========================
+            가입요청 서비스
+
+         회원가입 성공여부 반환
+
+         !암호화 진행예정
+         ! 로직 분리 예정
+     ========================== */
     public ResponsemMessageDto register(String userid ,String password ,String name, String email ,int departmentId){
         User user = new User();
         user.setUserId(userid);

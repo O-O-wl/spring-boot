@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @ComponentScan({"net.skhu"})
-@EntityScan("net.skhu..domain")
+@EntityScan("net.skhu.domain")
 @EnableJpaRepositories("net.skhu.repository")
 public class SkhuDemoApplication {
 

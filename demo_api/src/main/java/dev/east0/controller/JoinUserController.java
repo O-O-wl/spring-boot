@@ -33,29 +33,27 @@ public class JoinUserController {
     ******************************** */
     @GetMapping("password1/{password1}/password2/{password2}")
     public ResponsemMessageDto comfirmIdPW(@PathVariable("password1") String password1,@PathVariable("password2") String password2){
-        ResponsemMessageDto responsemMessageDto = new ResponsemMessageDto();
 
-         if(password1.equals(password2))
-         {responsemMessageDto.setResult(true);}
-         else{
-             responsemMessageDto.setResult(false);
-         }
-    return responsemMessageDto;
+         ResponsemMessageDto responsemMessageDto = new ResponsemMessageDto();
+
+         if(password1.equals(password2)) {responsemMessageDto.setResult(true); }
+         else{responsemMessageDto.setResult(false); }
+
+         return responsemMessageDto;
     }
 
-    /* ========================================
-     =           회원 가입 액션메소드
-     =
-     =    !  @PostMapping 변경예정
-     =    !  회원 수정 로직도 같은 메소드로 구현할 예정
-    ========================================== */
+    /* *****************************************
+     *           회원 가입 액션메소드
+     *
+     *    !  @PostMapping 변경예정
+     *    !  회원 수정 로직도 같은 메소드로 구현할 예정
+     ********************************************* */
     @GetMapping("userid/{userid}/name/{name}/password/{password}/email/{email}/departmentId/{departmentId}")
     public ResponsemMessageDto registerRequest(@PathVariable("userid") String userid,
                                                @PathVariable("name") String name,
                                                @PathVariable("password") String password,
                                                @PathVariable("email") String email,
                                                @PathVariable("departmentId") int departmentId){
-
 
        return joinUserService.register(userid,password,name,email,departmentId);
 

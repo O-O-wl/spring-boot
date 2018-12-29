@@ -25,8 +25,8 @@ public class ListSearchController {
     //  전체 학과 목록 조회
     //=========================
     @GetMapping("departments")
-    public List<Department> findAll_Departments() {
-        return listSearchService.findAll_Departments() ;
+    public List<Department> findAllDepartments() {
+        return listSearchService.findAllDepartments() ;
     }
 
     //================================
@@ -85,6 +85,8 @@ public class ListSearchController {
 
 
     }
+
+
 
 
 

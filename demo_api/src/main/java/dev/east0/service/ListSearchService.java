@@ -59,7 +59,7 @@ public class ListSearchService {
     //=======================
     //  전체학과목록출력 서비스
     //======================
-     public List<Department> findAll_Departments() {
+     public List<Department> findAllDepartments() {
         return departmentRepository.findAll();
     }
 

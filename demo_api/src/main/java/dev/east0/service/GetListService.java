@@ -16,7 +16,7 @@ import java.util.stream.Stream;
  ==================================================*/
 
 @Service
-public class ListSearchService {
+public class GetListService {
 
     DepartmentRepository departmentRepository;
 
@@ -41,12 +41,12 @@ public class ListSearchService {
      * @param courseRepository
      */
 
-    public ListSearchService(StudentRepository studentRepository,
-                             UserRepository userRepository,
-                             DepartmentRepository departmentRepository,
-                             ProfessorRepository professorRepository,
-                             RegisterRepository registerRepository,
-                             CourseRepository courseRepository){
+    public GetListService(StudentRepository studentRepository,
+                          UserRepository userRepository,
+                          DepartmentRepository departmentRepository,
+                          ProfessorRepository professorRepository,
+                          RegisterRepository registerRepository,
+                          CourseRepository courseRepository){
 
         this.registerRepository=registerRepository;
         this.studentRepository=studentRepository;

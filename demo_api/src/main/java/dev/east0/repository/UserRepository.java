@@ -9,4 +9,6 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User,Integer> {
     List<User> findByUserId(String userid);
     List<User> findUserByDepartment(Department department);
-}
+    List<User> findByNameStartingWith(String search);
+
+    }

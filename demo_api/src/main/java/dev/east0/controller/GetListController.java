@@ -1,8 +1,7 @@
 package dev.east0.controller;
 
 import dev.east0.domain.*;
-import dev.east0.repository.*;
-import dev.east0.service.ListSearchService;
+import dev.east0.service.GetListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,19 +13,19 @@ import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("api/list")
-public class ListSearchController {
+public class GetListController {
 
 
 
     @Autowired
-    ListSearchService listSearchService;
+    GetListService getListServiceService;
 
     //=========================
     //  전체 학과 목록 조회
     //=========================
     @GetMapping("departments")
     public List<Department> findAllDepartments() {
-        return listSearchService.findAllDepartments() ;
+        return getListServiceService.findAllDepartments() ;
     }
 
     //================================
@@ -35,7 +34,7 @@ public class ListSearchController {
     @GetMapping("department/{departmentId}/students")
     public List<Student> studentListByDepartment(@PathVariable("departmentId")int departmentId){
 
-        return listSearchService.studentListByDepartment(departmentId);
+        return getListServiceService.studentListByDepartment(departmentId);
     }
 
     //================================
@@ -44,7 +43,7 @@ public class ListSearchController {
     @GetMapping("department/{departmentId}/users")
     public Stream<User> findUsersByDepartmentId(@PathVariable("departmentId")int departmentId){
 
-        return listSearchService.findUsersByDepartment(departmentId);
+        return getListServiceService.findUsersByDepartment(departmentId);
     }
     //=====================
     //  학과별 교수목록조회
@@ -52,7 +51,7 @@ public class ListSearchController {
     @GetMapping("department/{departmentId}/professors")
     public List<Professor> professorListByDepartment(@PathVariable("departmentId")int departmentId){
 
-        return listSearchService.professorListByDepartmentId(departmentId);
+        return getListServiceService.professorListByDepartmentId(departmentId);
     }
 
     //====================================
@@ -60,7 +59,7 @@ public class ListSearchController {
     // ====================================
     @GetMapping("professor/{professorId}/courses")
     public Stream<Course> courseListByProfessor(@PathVariable("professorId")int professorId){
-        return listSearchService.courseListByProfessor(professorId);
+        return getListServiceService.courseListByProfessor(professorId);
 
     }
 
@@ -69,7 +68,7 @@ public class ListSearchController {
     // ====================================
     @GetMapping("users")
     public Stream<User> findAllUsers(){
-        return listSearchService.findAllUsers();
+        return getListServiceService.findAllUsers();
 
     }
 
@@ -80,11 +79,12 @@ public class ListSearchController {
     @GetMapping("student/{studentId}/courses")
     public Stream<Course> courseListByStudent(@PathVariable("studentId")int studentId){
 
-        return listSearchService
+        return getListServiceService
                 .courseListByStudent(studentId);
 
 
     }
+
 
 
 

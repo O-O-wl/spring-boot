@@ -14,3 +14,6 @@
 | **`api/join/password1/`<font color='coral'>`{password1}`</font> `/password2/`<font color='hotpink'>`{password2}`</font>** |**`비밀번호 , 비밀번호 확인 일치 여부 `** |
 | **`api/join/userid/`<font color='seagreen'>`{userid}`</font> `/name/`<font color='darkviolet'>`{name}`</font>`/password/`<font color='indianred'>`{password}`</font> `/email/`<font color='blue'>`{email}`</font>`/departmentId/`<font color='orange'>`{departmentId}`** |**`회원 가입 처리 , 수정도 넣을 예정`** |
 | **`api/login/id/`<font color='seagreen'>`{userid}`</font> `/password/`<font color='indianred'>`{password}`**|**`id / password 로 로그인 성공여부 조회`** |
+| **`api/search/userid/`<font color='seagreen'>`{userid}`</font>**|**`userId로 유저정보 조회`** |
+| **`api/search/userName/`<font color='seagreen'>`{search}`</font>**|**`유저 이름 검색을 통해 앞부분 일치하는 유저 정보 조회`** |
+| **`api/search/studentName/`<font color='seagreen'>`{search}`</font>**|**`학생이름 검색을 통해 앞부분 일치하는 학생조회 `** |

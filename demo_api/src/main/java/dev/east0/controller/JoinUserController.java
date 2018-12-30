@@ -30,7 +30,7 @@ public class JoinUserController {
     /* *************************************
      *  비밀번호 , 비밀번호 확인여부 확인
      *
-     *  ! @Service 계층으로 내릴 예정  -- 실행함
+     *  ! @Service 계층으로 내릴 예정  -- 완료 commit
      *  ! @PostMapping 으로 변경예정
      *  !     암호화 진행예정
      *

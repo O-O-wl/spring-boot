@@ -25,7 +25,7 @@ public class SearchController {
     //========================
 
     @RequestMapping("userName/{search}")
-    public Stream<User> findUserByUserName(@PathVariable("userName") String search){
+    public Stream<User> findUserByUserName(@PathVariable("search") String search){
         return searchService.findUserByUserName(search);
     }
 
@@ -46,7 +46,7 @@ public class SearchController {
     //========================
 
     @RequestMapping("studentName/{search}")
-    public Stream<Student> findByStudentName(@PathVariable("userName") String search){
+    public Stream<Student> findByStudentName(@PathVariable("search") String search){
         return searchService.findByStudentName(search);
     }
 

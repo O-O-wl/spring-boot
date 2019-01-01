@@ -34,7 +34,8 @@ public class Student {
     @OneToMany(mappedBy = "student")
     List<Register> registers;
 
-
+    @Column(name = "year")
+    int year;
 
 
 

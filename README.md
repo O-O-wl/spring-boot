@@ -17,3 +17,4 @@
 | **`api/search/userid/`<font color='seagreen'>`{userid}`</font>**|**`userId로 유저정보 조회`** |
 | **`api/search/userName/`<font color='seagreen'>`{search}`</font>**|**`유저 이름 검색을 통해 앞부분 일치하는 유저 정보 조회`** |
 | **`api/search/studentName/`<font color='seagreen'>`{search}`</font>**|**`학생이름 검색을 통해 앞부분 일치하는 학생조회 `** |
+| **`student/studentNo/{studentNo}/studentName/{name}/departmentId/{departmentId}/year/{year}`**|**`학생 데이터 추가`** |

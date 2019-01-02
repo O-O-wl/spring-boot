@@ -55,7 +55,7 @@ public class AddDataService {
     *    외부 소스 참고 할 필요있음
     *    더티 구현 소스 리팩토링 필요
     *   !@Service layer 에서 다른 Service 참조 !
-    *
+    *           계층구조  무 시? 
     ****************************************** */
     public ResponsemMessageDto addStudent(String studentNo, String studentName, int departmentId, int year){
 

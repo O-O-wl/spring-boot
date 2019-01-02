@@ -22,7 +22,7 @@ public class AddDataController {
     *
     *       로직 분할 필요해보임
     *    적절한 리턴 값인지 확인 필요
-    *
+    *        -------------
     ******************************** */
     @GetMapping("student/studentNo/{studentNo}/studentName/{name}/departmentId/{departmentId}/year/{year}")
     public ResponsemMessageDto addStudent(@PathVariable("studentNo") String studentNo,
